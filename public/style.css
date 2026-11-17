@@ -1,0 +1,32 @@
+ * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+body { background: radial-gradient(circle at 50% 0%, #1a1a3e, #0a0a1a); color: #fff; font-family: 'Segoe UI', Arial, sans-serif; min-height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; touch-action: none; }
+.screen { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 480px; padding: 24px; gap: 14px; }
+.hidden { display: none !important; }
+h1 { font-size: 32px; color: #7c3aed; text-shadow: 0 0 30px rgba(124, 58, 237, 0.7); letter-spacing: 2px; text-align: center; }
+h2 { font-size: 22px; color: #a78bfa; letter-spacing: 4px; }
+.subtitle { color: #888; font-size: 14px; margin-bottom: 8px; }
+input[type="text"] { width: 100%; max-width: 320px; padding: 14px 18px; font-size: 16px; font-family: inherit; background: rgba(255,255,255,0.06); border: 2px solid rgba(124, 58, 237, 0.4); border-radius: 10px; color: #fff; outline: none; text-align: center; letter-spacing: 2px; transition: border-color 0.2s; }
+input[type="text"]:focus { border-color: #7c3aed; }
+input::placeholder { color: #555; letter-spacing: 1px; }
+.big-btn { width: 100%; max-width: 320px; padding: 16px; font-size: 17px; font-weight: 700; font-family: inherit; letter-spacing: 2px; color: #fff; background: linear-gradient(135deg, #7c3aed, #a855f7); border: none; border-radius: 10px; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5); }
+.big-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(124, 58, 237, 0.7); }
+.big-btn:active { transform: scale(0.98); }
+.big-btn.secondary { background: rgba(255,255,255,0.08); border: 2px solid rgba(124, 58, 237, 0.5); box-shadow: none; }
+.divider { color: #555; font-size: 13px; letter-spacing: 2px; }
+.error { color: #ff5555; font-size: 13px; min-height: 18px; }
+.room-code { font-size: 42px; font-weight: 900; letter-spacing: 12px; color: #a855f7; text-shadow: 0 0 30px rgba(168, 85, 247, 0.6); padding: 10px 24px; border: 2px dashed rgba(168, 85, 247, 0.5); border-radius: 12px; }
+.hint { color: #666; font-size: 13px; text-align: center; }
+.players-list { width: 100%; max-width: 320px; display: flex; flex-direction: column; gap: 8px; margin: 10px 0; min-height: 100px; }
+.player-row { padding: 12px 16px; background: rgba(124, 58, 237, 0.12); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 8px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+.player-row .host-tag { font-size: 11px; color: #ffcc00; letter-spacing: 1px; }
+#game { position: relative; width: 100%; height: 100vh; max-width: 900px; padding: 0; gap: 0; }
+#gameCanvas { background: #1a1a2e; border: 3px solid #7c3aed; border-radius: 12px; box-shadow: 0 0 40px rgba(124, 58, 237, 0.4); max-width: 100%; max-height: 85vh; image-rendering: pixelated; }
+#hud { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 10; pointer-events: none; }
+.hud-item { padding: 8px 16px; background: rgba(0,0,0,0.7); border: 1px solid rgba(124, 58, 237, 0.5); border-radius: 20px; font-size: 14px; font-weight: 700; backdrop-filter: blur(6px); }
+#role-display { color: #a855f7; }
+.message { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 24px 40px; background: rgba(0,0,0,0.85); border: 2px solid #a855f7; border-radius: 16px; font-size: 24px; font-weight: 700; text-align: center; z-index: 20; backdrop-filter: blur(10px); }
+#controls-hint { position: absolute; bottom: 8px; width: 100%; text-align: center; color: #555; font-size: 12px; }
+#joystick-container { position: absolute; bottom: 40px; left: 40px; width: 130px; height: 130px; border-radius: 50%; background: rgba(124, 58, 237, 0.15); border: 2px solid rgba(124, 58, 237, 0.4); display: none; z-index: 15; }
+#joystick-container.active { display: block; }
+#joystick { position: absolute; top: 50%; left: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%; background: rgba(168, 85, 247, 0.7); box-shadow: 0 0 20px rgba(168, 85, 247, 0.6); pointer-events: none; }
+@media (max-width: 768px) { #joystick-container { display: block; } #controls-hint { display: none; } #gameCanvas { max-height: 70vh; } }
